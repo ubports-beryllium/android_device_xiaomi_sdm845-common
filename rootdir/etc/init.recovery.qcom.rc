@@ -58,3 +58,10 @@ on property:sys.usb.ffs.ready=1
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+on property:halium.fake.cache=1
+    start setup_fake_cache
+
+service setup_fake_cache /sbin/sh /setup_fake_cache.sh
+    disabled
+    oneshot

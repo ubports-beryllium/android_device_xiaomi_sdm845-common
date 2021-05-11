@@ -328,3 +328,7 @@ PRODUCT_PACKAGES += \
 
 # PRODUCT_BOOT_JARS += \
 #     WfdCommon
+
+#ubports recovery adb for installer and fake cache for ota
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/setup_fake_cache.sh:root/setup_fake_cache.sh 
